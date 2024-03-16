@@ -1,0 +1,79 @@
+<div class="fixed">
+  <mat-toolbar color="primary" class="d-flex justify-content-between">
+    <div>
+      <img
+        class="mat-horizontal-stepper-header img-header me-lg-auto"
+        src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/older-content/tdn/angular_boilerplate_header.jpg?sfvrsn=161c6a39_1"
+      />
+      <button mat-icon-button>
+        <mat-icon
+          style="visibility: hidden"
+          (click)="sidenav.toggle(); openNav()"
+          id="sidebtn"
+          >menu</mat-icon
+        >
+      </button>
+    </div>
+    <span class="menu-spacer"></span>
+    <button class="profile" mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+      <mat-select #select (selectionChange)="logout($event.value)">
+        <mat-option value="profile">
+          <mat-icon>perm_identity</mat-icon>Profile</mat-option
+        >
+        <mat-option value="setting"
+          ><mat-icon>settings</mat-icon>Setting</mat-option
+        >
+        <mat-option value="logout"
+          ><mat-icon>logout</mat-icon>Log Out</mat-option
+        >
+      </mat-select>
+    </button>
+  </mat-toolbar>
+  <mat-divider></mat-divider>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" id="mySidenav" #sidenav style="background: white">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['pages/home']">
+          <mat-icon>home</mat-icon> Dashboard
+        </a>
+        <a mat-list-item [routerLink]="['pages/employee-details']"
+          ><mat-icon>table_chart</mat-icon> Details
+        </a>
+        <a mat-list-item [routerLink]="['pages/chart']"
+          ><mat-icon>bar_chart</mat-icon> Charts
+        </a>
+        <a mat-list-item [routerLink]="['pages/forms']"
+          ><mat-icon>save</mat-icon> Forms
+        </a>
+        <a mat-list-item [routerLink]="['pages/loader']"
+          ><mat-icon>data_usage</mat-icon> Loader
+        </a>
+        <a mat-list-item [routerLink]="['pages/dataShairing']"
+          ><mat-icon>share</mat-icon> Data Sharing
+        </a>
+        <a mat-list-item [routerLink]="['pages/error']"
+          ><mat-icon>error</mat-icon> Error Handling
+        </a>
+        <a mat-list-item [routerLink]="['pages/pipe']"
+          ><mat-icon>translate</mat-icon> Pipe
+        </a>
+        <a mat-list-item [routerLink]="['pages/about']"
+          ><mat-icon>details</mat-icon> About
+        </a>
+        <!-- <a
+          mat-list-item
+          (click)="sidenav.toggle(); closeNav()"
+          href=""
+          mat-list-item
+          >Close</a
+        > -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 100vh" *ngIf="logIn">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,114 @@
+<!-- <section class="content">
+    <div class="container-fluid">
+    
+      <div class="card-header">
+       
+        <h3 class="card-title pt-1 mb-0">Data Sharing Component (Parent)</h3>
+      
+      </div>
+      <div class="card-body">
+      
+        <div class="row justify-content-center">
+          <form class="col-md-4">
+            <div class="form-group">
+              <label for="dataToChild">Sample Text</label>
+              <input
+                class="form-control"
+                [(ngModel)]="dataToChild"
+                id="dataToChild"
+                type="text"
+                placeholder="Enter any text"
+                name="dataToChild"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 center">
+            <label>Counter of Parent: {{ dataDetailComp?.counter }}</label>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-4 center">
+            <button
+              type="button"
+              class="btn btn-block btn-primary"
+              (click)="increase()"
+            >
+              Increase Counter
+            </button>
+            <button
+              type="button"
+              class="btn btn-block btn-primary"
+              (click)="decrease()"
+            >
+              Decrease Counter
+            </button>
+          </div>
+        </div>
+  
+        
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary" style="min-height: 90%; max-width: 100%">
+            <app-data-detail
+              #childComp
+              [dataFromParent]="dataToChild"
+              (clearData)="clearOrSetForm($event)"
+            ></app-data-detail>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-primary" style="min-height: 95%; max-width: 100%">
+            <app-contact></app-contact>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   -->
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1 class="underline">From Parent to Child Using Input</h1>
+      </div>
+      <div class="col-md-12">
+        <app-input-parent></app-input-parent>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1 class="underline">From Child to Parent Using Output</h1>
+      </div>
+      <div class="col-md-12">
+        <app-output-parent></app-output-parent>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1 class="underline">From Child to Parent Using ViewChild</h1>
+      </div>
+      <div class="col-md-12">
+        <app-viewchild-parent></app-viewchild-parent>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1 class="underline">Unrelated Components Using Behaviour Subject</h1>
+      </div>
+      <div class="col-md-6" style="margin-bottom: 60px;">
+        <app-unrelated-first></app-unrelated-first>
+      </div>
+      <div class="col-md-6" style="margin-bottom: 60px;">
+        <app-unrelated-second></app-unrelated-second>
+      </div>
+    </div>
+  </div>
+</section>

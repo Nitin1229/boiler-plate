@@ -1,0 +1,57 @@
+<section class="content" style="padding-bottom: 3rem">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1>Forms</h1>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Reactive Form</h3>
+          </div>
+          <div
+            class="card-body"
+            id="reactiveForm"
+            style="min-height: 250px; max-width: 100%"
+          >
+            <div class="chart">
+              <app-reactive-form
+                (reactiveFormData)="setFormData($event, 'reactive')"
+              ></app-reactive-form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Template Driven Form</h3>
+          </div>
+          <div
+            class="card-body"
+            id="templateDirvenForm"
+            style="min-height: 250px; max-width: 100%"
+          >
+            <app-template-form
+              (templateFormData)="setFormData($event, 'template')"
+            ></app-template-form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Review Form Data</h3>
+          </div>
+          <div class="card-body" style="min-height: 250px; max-width: 100%">
+            <app-display-form
+              [formData]="{ form: formData, formType: formType }"
+            ></app-display-form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>

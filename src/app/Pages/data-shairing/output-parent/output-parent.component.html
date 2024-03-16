@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    <app-output-child (dataToParent)="showChildData($event)"></app-output-child>
+  </div>
+  <div class="col-md-6">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title pt-1 mb-0">Output Parent Component</h3>
+      </div>
+      <div class="card-body row" style="min-height: 250px; max-width: 100%">
+        <div class="chart col-6">
+          <label class="fw-bold" for="">Data From Child : </label>
+          <span>{{ dataFrmOutputChild }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

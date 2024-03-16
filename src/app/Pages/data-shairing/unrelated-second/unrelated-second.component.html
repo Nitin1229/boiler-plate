@@ -1,0 +1,31 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title pt-1 mb-0">Second UnRelated Component</h3>
+  </div>
+  <div class="card-body row" style="min-height: 250px; max-width: 100%">
+    <div class="chart col-6">
+      <form>
+        <div class="form-group">
+          <label for="dataToChild">Enter Contact No.</label>
+          <input
+            class="form-control"
+            [(ngModel)]="contactNo"
+            id="dataToChild"
+            (keypress)="isNumberKey($event)"
+            pattern="^[6-9][0-9]{9}$"
+            placeholder="Enter contact no"
+            name="dataToChild"
+            maxlength="10"
+          />
+        </div>
+        <button (click)="updateContact()" class="btn btn-primary">
+          Update Contact
+        </button>
+      </form>
+    </div>
+    <div class="chart col-6">
+      <label class="fw-bold" for="">Latest Contact No :</label>
+      <span>{{ latestContactNo }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title pt-1 mb-0">Parent Component</h3>
+      </div>
+      <div class="card-body" style="min-height: 250px; max-width: 100%">
+        <div class="chart">
+          <form class="col-md-4" style="width: 75%;">
+            <div class="form-group">
+              <label for="dataToChild">Enter Data To Update Child</label>
+              <input
+                class="form-control"
+                [(ngModel)]="dataToInputChild"
+                id="dataToChild"
+                type="text"
+                placeholder="Enter any text"
+                name="dataToChild"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <app-input-child [dataFrmInputParent]="dataToInputChild"></app-input-child>
+  </div>
+</div>

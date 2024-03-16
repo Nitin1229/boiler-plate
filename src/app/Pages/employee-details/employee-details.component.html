@@ -1,0 +1,185 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+    td {
+      text-align: center;
+    }
+  </style>
+  <body id="emp"> -->
+<!-- <div class="fw-100">
+      <div class="w-100 d-flex justify-content-center head-sm">
+        <div class="fa-3x">
+          <i class="fa fa-spinner fa-spin"></i>
+        </div>
+      </div>
+    </div> -->
+<!-- {{contactNo}} -->
+<!-- <div *ngIf="loader" class="loader"></div>
+
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <app-emp-search (searchEmp)="searchEmp($event)"></app-emp-search>
+        </div>
+        <div class="col-2">
+          <app-emp-filter (filter)="filterEmp($event)"></app-emp-filter>
+        </div>
+      </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Employee Id</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Address</th>
+            <th scope="col">Employee Email</th>
+            <th scope="col">Employee Ph No.</th>
+            <th scope="col">Employee DOB.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of empDetails | filter: searchText ">
+            <td scope="row">{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>
+              {{ emp.address.suite }}, {{ emp.address.street }},
+              {{ emp.address.city }}-{{ emp.address.zipcode }}
+            </td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.dob }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+  </body>
+</html> -->
+
+<div class="container-fluid" style="padding-bottom: 80px">
+  <!-- Searchbox starts here -->
+  <div class="d-flex mt">
+    <div class="col-4 bg-secondary d-flex p-1 px-2 m-1 bg-opacity-10 searchBox">
+      <div style="flex: 1">
+        <input
+          placeholder="Search..."
+          class="form-control mt-1 searchText"
+          [(ngModel)]="searchText"
+        />
+      </div>
+      <div class="me-2 icon">
+        <i class="bi bi-search h5"></i>
+      </div>
+    </div>
+    <div class="my-auto">
+      <app-emp-filter (filter)="filterEmp($event)"></app-emp-filter>
+    </div>
+  </div>
+
+  <!-- Searchbox ends here -->
+
+  <!-- Items per Page starts here -->
+
+  <div class="col-12 d-flex mt-4 items-per-page">
+    <div class="col-1 p-2">
+      <label class="h5">Items Per Page</label>
+    </div>
+    <div class="col-1 searchBox p-1">
+      <ng-select
+        class="ng-select-options"
+        [(ngModel)]="itemsPerPageList"
+        (change)="itemsPerPageList = $event; getEmpDetails()"
+      >
+        <ng-option value="12">12</ng-option>
+        <ng-option value="24">24</ng-option>
+        <ng-option value="36">36</ng-option>
+      </ng-select>
+    </div>
+  </div>
+
+  <!-- Items per page ends here -->
+
+
+  <div class="clear"> 
+    <button (click)="getEmpDetails()" class="btn btn-primary">Clear Filters</button>
+  </div>
+
+  <div *ngIf="loader" class="loader"></div>
+  <div class="row mt-3" *ngIf="loader == false">
+    <div class="col-md-12 mt-3">
+      <h1>Passenger's Trips Detail</h1>
+    </div>
+    <div class="d-flex flex-wrap justify-content-around">
+      <div
+        class="card card-primary d-flex"
+        style="min-width: 350px; width: 24%"
+        *ngFor="
+          let pass of passDetails.data
+            | filter : searchText
+            | paginate
+              : {
+                  itemsPerPage: itemsPerPageList,
+                  currentPage: page,
+                  totalItems: passDetails.totalPassengers
+                }
+        "
+      >
+        <div class="card-header">
+          <span class="h4">{{ pass.airline[0].name | titlecase }}</span>
+          <h3>Since {{ pass.airline[0].established }}</h3>
+        </div>
+        <div
+          class="card-body text-center bg-opacity-10"
+          id="componentLoader"
+          style="min-height: 150px; max-width: 100%; "
+        >
+          <span class="h4"
+            >Name : <span class="h5">{{ pass.name | titlecase }}</span> </span
+          ><br />
+          <span class="h4"
+            >Trips : <span class="h5">{{ pass.trips }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div *ngIf="nodataFound">
+    <p class="noData">No Data Found</p>
+  </div> -->
+
+
+  <div *ngIf="!(passDetails.data
+  | filter : searchText)?.length">
+    <p class="noData">No Data Found</p>
+  </div>
+
+  <!-- Pagination starts here -->
+  <div *ngIf="!nodataFound &&
+  (passDetails.data
+    | filter : searchText)?.length">
+    <div class="d-flex justify-content-end" *ngIf="loader == false">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        class="mt-3 h5"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+
+  <!-- Pagination ends here -->
+</div>

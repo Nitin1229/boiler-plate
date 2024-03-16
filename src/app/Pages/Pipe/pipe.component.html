@@ -1,0 +1,297 @@
+<section class="content" style="padding-bottom: 3rem;margin-left: 12px;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mt-3" style="padding: 0;">
+        <h1>Pipes</h1>
+      </div>
+      <div class="row">
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header col-12">
+            <h3 class="card-title pt-1 mb-0">Date Pipe</h3>
+          </div>
+          <div
+            class="chart card-body col-12"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <app-date-pipe></app-date-pipe>
+          </div>
+        </div>
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Uppercase Pipe</h3>
+          </div>
+          <div
+            class="card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="col-6">
+              <label class="head-sm">Enter Text :</label>
+              <textarea
+                id="upperCaseInput"
+                class="form-control mt-1"
+                placeholder=" Enter text "
+                autocomplete="off"
+                style="resize: none"
+              ></textarea>
+            </div>
+            <div class="col-6">
+              <label class="head-sm">Output :</label>
+              <textarea
+                class="form-control mt-1"
+                placeholder=" Text in Uppercase "
+                autocomplete="off"
+                style="resize: none"
+                readonly
+                value="{{ outputForUpper | uppercase }}"
+              ></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  (click)="textTransform('upper')"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Title Pipe</h3>
+          </div>
+          <div class="card-body row" id="componentLoader">
+            <div class="chart col-6">
+              <label>Enter Title :</label>
+              <input
+                type="text"
+                id="inputForTitle"
+                placeholder="Enter title"
+                autocomplete="off"
+                class="form-control mt-1"
+              />
+            </div>
+            <div class="col-6">
+              <label>Output :</label>
+              <input
+                placeholder="Title"
+                class="form-control mt-1"
+                value="{{ outputForTitle | titlecase }}"
+                readonly
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="titleCase()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Lowercase Pipe</h3>
+          </div>
+          <div
+            class="card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="chart col-6">
+              <label class="head-sm">Enter Text :</label>
+              <textarea
+                id="lowerCaseInput"
+                class="form-control mt-1"
+                placeholder=" Enter text "
+                autocomplete="off"
+                style="resize: none"
+              ></textarea>
+            </div>
+            <div class="col-6">
+              <label class="head-sm">Output :</label>
+              <textarea
+                class="form-control mt-1"
+                placeholder=" Text in lowercase "
+                autocomplete="off"
+                style="resize: none"
+                readonly
+                value="{{ outputForLower | lowercase }}"
+              ></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="textTransform('lower')"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Currency Pipe</h3>
+          </div>
+          <div
+            class="chart card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <app-currency-pipe></app-currency-pipe>
+          </div>
+        </div>
+        <div class="card pd card-primary col-md-4" style="width: 32%">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Percent Pipe</h3>
+          </div>
+          <div
+            class="card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="chart col-6">
+              <label class="head-sm">Enter Number :</label>
+              <input
+                type="number"
+                id="ipNumberForDec"
+                class="form-control mt-1"
+                placeholder="Enter number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-6">
+              <label class="head-sm">Output :</label>
+              <input
+                placeholder="Title"
+                class="form-control mt-1"
+                value="{{ outputForPercent | percent : '1.1-3' }}"
+                readonly
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="numberToPercent()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card pd card-primary col-md-4" style="width: 32%;margin-bottom: 60px;">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Decimal Pipe</h3>
+          </div>
+          <div
+            class="chart card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="col-6">
+              <label class="head-sm">Enter Number :</label>
+              <input
+                type="number"
+                id="inputNumber"
+                class="form-control mt-1"
+                placeholder="Enter number"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-6">
+              <label class="head-sm">Output :</label>
+              <input
+                placeholder="Title"
+                class="form-control mt-1"
+                value="{{ outputForDecimal | number : '1.1-3' }}"
+                readonly
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="numberToDecimal()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card pd card-primary col-md-4" style="width: 32%;margin-bottom: 60px;">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Slice Pipe</h3>
+          </div>
+          <div
+            class="card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="chart col-6">
+              <label class="head-sm">Enter String :</label>
+              <input
+                type="text"
+                id="inputForString"
+                class="form-control mt-1"
+                placeholder="Enter String"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-6">
+              <label class="head-sm">Output :</label>
+              <input
+                placeholder="Title"
+                class="form-control mt-1"
+                value="{{ outputForString | slice : 0 : 3 }}"
+                readonly
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-4 mt-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="stringSlicing()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="card card-primary col-md-4">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Demo Pipe</h3>
+          </div>
+          <div
+            class="card-body row"
+            id="componentLoader"
+            style="min-height: 150px; max-width: 100%"
+          >
+            <div class="chart col-6"></div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>

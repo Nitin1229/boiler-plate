@@ -1,0 +1,134 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+/>
+<section class="content" style="padding-bottom: 3rem">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mt-3">
+        <h1>Error Pages</h1>
+      </div>
+      <div class="col-md-6" style="margin-bottom: 60px;">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Error 404 : Not Found</h3>
+            <button
+              type="button"
+              class="btn bg-info"
+              data-bs-toggle="collapse"
+              href="#notFoundError"
+              role="button"
+              aria-expanded="true"
+              aria-controls="notFoundError"
+            >
+              <i class="fa fas fa-minus"></i>
+            </button>
+          </div>
+          <div
+            class="card-body row justify-content-center collapse"
+            id="notFoundError"
+           
+          >
+          <app-not-found-error></app-not-found-error>
+            
+          </div>
+        </div>
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Error 400</h3>
+            <button
+              type="button"
+              class="btn bg-info"
+              data-bs-toggle="collapse"
+              href="#badRequest"
+              role="button"
+              aria-expanded="true"
+              aria-controls="badRequest"
+            >
+              <i class="fa fas fa-minus"></i>
+            </button>
+          </div>
+          <div
+            class="card-body row justify-content-center collapse"
+            id="badRequest"
+            style="min-height: 250px; max-width: 100%"
+          >
+            <div class="chart col-8 bg-info bg-opacity-50 rounded-5 cards">
+              <app-bad-request></app-bad-request>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Error 502 : Bad Gateway</h3>
+            <button
+              type="button"
+              class="btn bg-info"
+              data-bs-toggle="collapse"
+              href="#badGateway"
+              role="button"
+              aria-expanded="true"
+              aria-controls="badGateway"
+            >
+              <i class="fa fas fa-minus"></i>
+            </button>
+          </div>
+          <div
+            class="card-body row justify-content-center collapse"
+            id="badGateway"
+            style="min-height: 250px; max-width: 100%"
+          >
+          <app-gateway-error></app-gateway-error>
+           
+          </div>
+        </div>
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title pt-1 mb-0">Other Errors</h3>
+            <div class="card-tools">
+              <button
+                type="button"
+                class="btn bg-info"
+                data-bs-toggle="collapse"
+                href="#componentLoader"
+                role="button"
+                aria-expanded="true"
+                aria-controls="componentLoader"
+              >
+                <i class="fa fas fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <div
+            class="card-body collapse"
+            id="componentLoader"
+            style="min-height: 250px; max-width: 100%"
+          >
+            <div class="chart col-12">
+              <div class="page-wrap d-flex flex-row align-items-center">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-md-12 text-center">
+                      <span class="display-1 d-block">Oop's!</span>
+                      <div class="mb-4 lead">Something went wrong...</div>
+                      <a class="btn bg-primary bg-opacity-50" (click)="check()"
+                        >Check Demo</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="demo">
+                <app-other-error></app-other-error>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

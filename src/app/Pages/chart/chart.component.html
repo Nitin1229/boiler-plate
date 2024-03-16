@@ -1,0 +1,79 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h1>Charts</h1>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 60px;">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Bar Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-bs-toggle="collapse" href="#barChart"
+                                role="button" aria-expanded="true" aria-controls="barChart">
+                                <i class="fa fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body collapse" id="barChart" style="min-height: 250px; max-width: 100%;">
+                        <div class="chart">
+                            <app-bar-chart>
+                            </app-bar-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Pie Chart</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-bs-toggle="collapse" href="#pieChart"
+                                role="button" aria-expanded="true" aria-controls="pieChart">
+                                <i class="fa fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body collapse" id="pieChart" style="min-height: 250px; max-width: 100%;">
+                        <app-pie-chart>
+                        </app-pie-chart>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="margin-bottom: 60px;">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Line Chart</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-bs-toggle="collapse" href="#lineChart"
+                            role="button" aria-expanded="true" aria-controls="lineChart">
+                                <i class="fa fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body collapse" id="lineChart" style="min-height: 250px; max-width: 100%;">
+                        <app-line-chart>
+                        </app-line-chart>
+                    </div>
+                </div>
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Donut Chart</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool"  data-bs-toggle="collapse" href="#donutChart"
+                            role="button" aria-expanded="true" aria-controls="donutChart">
+                                <i class="fa fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body collapse" id="donutChart" style="min-height: 250px; max-width: 100%;">
+                        <div class="chart">
+                            <app-donut-chart>
+                            </app-donut-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

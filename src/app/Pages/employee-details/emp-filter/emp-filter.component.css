@@ -1,0 +1,7 @@
+.filter-icon:hover {
+  cursor: pointer;
+}
+
+.filter-icon i:hover {
+  color: #17a2b8;
+}

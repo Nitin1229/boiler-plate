@@ -1,0 +1,46 @@
+<form [formGroup]="datePipeForm">
+  <div class="row">
+    <div class="form-group col-6">
+      <label>Enter Date :</label>
+      <input
+        type="text"
+        name="date"
+        formControlName="date"
+        id="date"
+        class="form-control"
+        placeholder="DD/MM/YYYY"
+        onfocus="(this.type='date')"
+      />
+      <div class="form-group col-12 mt-3">
+        <label>Select Date Format :</label>
+        <ng-select
+          [items]="dateFormats"
+          id="dateFormat"
+          placeholder="Select format"
+          formControlName="dateFormats"
+        >
+        </ng-select>
+      </div>
+    </div>
+    <div class="form-group col-6">
+      <label>Output :</label>
+      <input
+        formControlName="output"
+        class="form-control"
+        placeholder="Date in custom format"
+        readonly
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="dateFormat()"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,283 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card {
+  margin-bottom: 20px;
+}
+.radio-container {
+  padding-left: 30px !important;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #17a2b8;
+}
+.bold {
+  font-weight: bold;
+}
+.pd {
+  padding: 0;
+  margin-right: 12px;
+}
+.mat-drawer-side {
+  z-index: 1 !important;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+html {
+  scrollbar-color: black #fff;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.img-header {
+  height: 63px;
+}
+
+.page-title {
+  color: #198754;
+}
+
+.side-nav {
+  background-color: rgb(209 225 213);
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group.label {
+  margin-bottom: 5px;
+}
+
+.mat-toolbar.mat-primary {
+  background: white;
+  color: #17a2b8;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.margin-bottom {
+  margin-bottom: 12px;
+}
+
+.q1 {
+  width: 47%;
+  height: auto;
+  order: 1;
+  flex: 0 47%;
+  margin: 12px;
+  box-shadow: 2px 4px 4px 1px #dbdbdb;
+  border-radius: 8px;
+}
+
+.q2 {
+  width: 47%;
+  height: auto;
+  order: 2;
+  flex: 0 47%;
+  margin: 12px;
+  box-shadow: 2px 4px 4px 1px #dbdbdb;
+  border-radius: 8px;
+}
+
+.q3 {
+  width: 47%;
+  height: auto;
+  order: 4;
+  flex: 0 47%;
+  margin: 12px;
+  box-shadow: 2px 4px 4px 1px #dbdbdb;
+  border-radius: 8px;
+}
+
+.q4 {
+  width: 47%;
+  height: auto;
+  order: 3;
+  flex: 0 47%;
+  margin: 12px;
+  margin-bottom: 84px !important;
+  box-shadow: 2px 4px 4px 1px #dbdbdb;
+  border-radius: 8px;
+}
+
+.mat-drawer-inner-container {
+  background-color: #f3fbf5;
+}
+
+.accordion-borderless .accordion-item .accordion-button.collapsed {
+  background: #dfe7f6;
+  color: #2c58a0;
+}
+
+.bgColor {
+  background-color: #dbdbdb;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.home {
+  font-size: 60px;
+  text-align: center;
+}
+
+.clear {
+  text-align: end;
+  margin-top: -50px;
+}
+
+.noData {
+  font-size: 24px;
+  text-align: center;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+}
+
+.hmb {
+  margin-top: 12px !important;
+}
+
+.border-table {
+  border: 1px solid black;
+  border-radius: 3px;
+  background: lightgray;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.profile {
+  float: right !important;
+  margin-right: 10px !important;
+}
+
+.mat-select {
+  display: inline;
+}
+
+.mat-select-panel {
+  margin-top: 35px;
+}
+
+.mat-select-value {
+  display: none;
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
+
+.wide {
+  font-weight: 900 !important;
+  font-size: 24px !important;
+}
+
+.ml-5 {
+  margin-left: 60px;
+}
+
+.error-msg {
+  color: red;
+  text-align: left;
+  margin-top: 2px;
+}
+
+.section-heading {
+  font-size: 30px !important;
+}
+
+.mt {
+  margin-top: 12px;
+}
+
+.badgateway {
+  background: #eb0b0b;
+  color: white;
+  padding: 6px;
+  font-size: 60px;
+}
+
+.mt20 {
+  margin-top: 25px !important;
+}
+
+.bg-image-vertical {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+
+.mat-icon {
+  width: 28px !important;
+  height: 30px !important;
+}
+
+@media (min-width: 1025px) {
+  .h-custom-2 {
+    height: 100%;
+  }
+}
+
+.form-outline .form-control.form-control-lg:visited ~ .form-label {
+  transform: translateY(-1.25rem) translateY(0.1rem) scale(0.8);
+}
+mat-toolbar {
+  padding: 0px !important;
+}
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";

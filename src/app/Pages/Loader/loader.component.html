@@ -1,0 +1,41 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h1>Loaders</h1>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Full Page Loader</h3>
+                    </div>
+                    <div class="card-body" id="fullPageLoader" style="min-height: 250px; max-width: 100%;">
+                        <div class="chart">
+                            <button type="button" class="btn btn-primary" (click)="fulPageLoader()">Open Loader</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title pt-1 mb-0">Component Loader</h3>
+                    </div>
+                    <div class="card-body row" id="componentLoader" style="min-height: 250px; max-width: 100%;">
+                        <div class="chart col-6">
+                            <button type="button" class="btn btn-primary" (click)="componentLoader()">Open
+                                Loader</button>
+                        </div>
+                        <div class="input-loader col-6 top-up" *ngIf="loader">
+                            <div class="fa-2x">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>

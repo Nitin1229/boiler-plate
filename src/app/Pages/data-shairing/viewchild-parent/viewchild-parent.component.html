@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-6">
+    <app-viewchild-child></app-viewchild-child>
+  </div>
+  <div class="col-md-6">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title pt-1 mb-0">ViewChild Parent Component</h3>
+      </div>
+      <div class="card-body" style="min-height: 250px; max-width: 100%">
+        <div class="row">
+          <div class="chart col-6">
+            <button (click)="fetchChildData()" class="btn btn-primary">
+              Fetch Child Data
+            </button>
+
+            <!-- <div class="card-body row" style="min-height: 250px; max-width: 100%"> -->
+            <button (click)="clearChildData()" class="btn btn-primary mt-4">
+              clear Child Data
+            </button>
+          </div>
+          <!-- </div> -->
+          <div class="chart col-4">
+            <label class="fw-bold" for="">Data From Child :</label>
+            <span>{{ dataFrmChild }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

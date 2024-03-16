@@ -1,0 +1,27 @@
+.searchBox {
+  box-shadow: inset -3px -3px 6px #fff, inset 3px 3px 6px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 20px;
+}
+
+.icon {
+  height: fit-content;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+}
+
+::ng-deep .ng-select.ng-select-options div,
+.searchText {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.items-per-page {
+  width: fit-content;
+  min-width: 300px;
+}
+
+.items-per-page div {
+  flex: 1;
+}

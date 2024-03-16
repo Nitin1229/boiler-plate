@@ -1,0 +1,23 @@
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-title pt-1 mb-0">Output Child Component</h3>
+  </div>
+  <div class="card-body" style="min-height: 250px; max-width: 100%">
+    <div class="chart">
+      <form class="col-md-4" style="width: 75%;">
+        <div class="form-group">
+          <label for="dataToChild">Enter Data To Update Parent</label>
+          <input
+            class="form-control"
+            [(ngModel)]="dataToOutputChild"
+            id="dataToChild"
+            type="text"
+            placeholder="Enter any text"
+            name="dataToChild"
+          />
+        </div>
+        <button (click)="sendDataToParent()" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

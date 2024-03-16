@@ -1,0 +1,94 @@
+<div class="container filter-icon">
+  <i
+    class="bi bi-filter-square-fill h2"
+    (click)="openFilterTemp(filterTemplate)"
+  ></i>
+</div>
+<ng-template #filterTemplate let-modal>
+  <div class="modal-header">
+    <p class="modal-title h2">Filter</p>
+    <button
+      type="button"
+      class="close h4 btn-primary"
+      (click)="filterModalRef.hide()"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form
+      class="form-group"
+      [formGroup]="filterForm"
+      (ngSubmit)="onFormSubmit()"
+    >
+      <div class="form-group col-12">
+        <label for="username" class="h5">Airline's Name</label>
+        <input
+          class="form-control mt-3"
+          formControlName="name"
+          type="text"
+          placeholder="Enter Airline Name"
+        />
+      </div>
+      <div class="row">
+        <div class="form-group col-6">
+          <label for="username" class="h5">Since</label>
+          <input
+            class="form-control mt-2"
+            type="text"
+            formControlName="startYear"
+            placeholder="From year"
+            [maxlength]="4"
+            [minlength]="4"
+            (keypress)="numeric_keypress($event)"
+            (focusout)="check($event)"
+          />
+        </div>
+        <div class="form-group col-6">
+          <label for="username" class="h5">To</label>
+          <input
+            class="form-control mt-2"
+            type="text"
+            formControlName="endYear"
+            placeholder="To year"
+            [maxlength]="4"
+            [minlength]="4"
+            (keypress)="numeric_keypress($event)"
+            (focusout)="check($event)"
+          />
+        </div>
+        <div class="col-4">
+          <label class="h5">Trips range</label>
+          <ng-select
+            class="mt-2"
+            formControlName="tripRange"
+            [(ngModel)]="tripsRange"
+            (change)="tripsRange = $event"
+            placeholder="Select range"
+          >
+            <ng-option value="100">0-100</ng-option>
+            <ng-option value="500">101-500</ng-option>
+            <ng-option value="above">501 & above</ng-option>
+          </ng-select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="clear()"
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Clear
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!filterForm.valid"
+        >
+          Filter
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
